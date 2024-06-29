@@ -1,5 +1,4 @@
 # snack-game
-# bank-system-hz45
 <h1 align="center">Hi 👋, I'm Hiba M.Dawood</h1>
 <h3 align="center">A passionate full-stack developer from Pakistan.</h3>
 
