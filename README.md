@@ -1,4 +1,9 @@
 # snack-game
+
+"for playing this snack game copy this link and paste on your browser and play"
+file:///C:/Users/Huzaifa%20Dawood/Desktop/snack-game/index.html
+
+
 <h1 align="center">Hi 👋, I'm Hiba M.Dawood</h1>
 <h3 align="center">A passionate full-stack developer from Pakistan.</h3>
 
