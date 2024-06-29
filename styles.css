@@ -1,0 +1,36 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #1a1a1a;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #fff;
+}
+
+#gameContainer {
+  position: static;
+  width: 400px;
+  height: 400px;
+}
+
+#backgroundImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  object-fit: cover;
+}
+
+#gameCanvas {
+  position: relative;
+  z-index: 1;
+  background-color: transparent;
+  border: 5px solid #141313;
+  box-shadow: 0 0 20px rgba(22, 20, 20, 0.3);
+  background-color: #0d5e22;
+} 
+

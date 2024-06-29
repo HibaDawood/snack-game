@@ -1,0 +1,17 @@
+{
+  "name": "snack-game",
+  "version": "1.0.1",
+  "description": "A simple Snake game built with HTML, CSS, javascript and TypeScript",
+  "main": "dist/script.js",
+  "scripts": {
+    "build": "tsc && cp src/index.html dist/index.html && cp src/styles.css dist/styles.css",
+    "start": "npm run build && npx http-server ./dist"
+  },
+  "keywords": ["snake", "game", "typescript", "html", "css", "javascript"],
+  "author": "Hiba M.Dawood",
+  "license": "MIT",
+  "dependencies": {
+      "typescript": "^4.0.0",
+    "http-server": "^0.12.3"
+  }
+}
