@@ -1,4 +1,5 @@
-const CANVAS_SIZE = 400;
+const CANVAS_BASE_SIZE = 400;
+let CANVAS_SIZE = CANVAS_BASE_SIZE;
 const GRID_SIZE = 20;
 const INITIAL_SNAKE_LENGTH = 5;
 const FRAME_RATE = 6;
@@ -8,6 +9,16 @@ enum Direction {
   Down,
   Left,
   Right,
+}
+
+function resizeCanvas() {
+  const container = document.getElementById("gameContainer") as HTMLElement;
+  const canvas = document.getElementById("gameCanvas") as HTMLCanvasElement;
+
+  const size = Math.min(container.clientWidth, container.clientHeight);
+  CANVAS_SIZE = size;
+  canvas.width = size;
+  canvas.height = size;
 }
 
 class Snake {
@@ -134,8 +145,8 @@ CanvasRenderingContext2D.prototype.roundRect = function (
 };
 
 class Food {
-  x: number = 0; ///////
-  y: number = 0; ///////
+  x: number = 0;
+  y: number = 0;
 
   constructor() {
     this.randomizePosition();
@@ -190,7 +201,7 @@ class Game {
       this.food.draw(this.ctx);
       this.snake.draw(this.ctx);
       this.drawScore();
-    }, 1000 / FRAME_RATE); // Slower frame rate
+    }, 1000 / FRAME_RATE);
   }
 
   clearCanvas() {
