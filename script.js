@@ -9,7 +9,8 @@ var __assign = (this && this.__assign) || function () {
     };
     return __assign.apply(this, arguments);
 };
-var CANVAS_SIZE = 400;
+var CANVAS_BASE_SIZE = 400;
+var CANVAS_SIZE = CANVAS_BASE_SIZE;
 var GRID_SIZE = 20;
 var INITIAL_SNAKE_LENGTH = 5;
 var FRAME_RATE = 6;
@@ -20,6 +21,14 @@ var Direction;
     Direction[Direction["Left"] = 2] = "Left";
     Direction[Direction["Right"] = 3] = "Right";
 })(Direction || (Direction = {}));
+function resizeCanvas() {
+    var container = document.getElementById("gameContainer");
+    var canvas = document.getElementById("gameCanvas");
+    var size = Math.min(container.clientWidth, container.clientHeight);
+    CANVAS_SIZE = size;
+    canvas.width = size;
+    canvas.height = size;
+}
 var Snake = /** @class */ (function () {
     function Snake() {
         this.body = [];
@@ -119,8 +128,8 @@ CanvasRenderingContext2D.prototype.roundRect = function (x, y, w, h, r) {
 };
 var Food = /** @class */ (function () {
     function Food() {
-        this.x = 0; ///////   
-        this.y = 0; ///////
+        this.x = 0;
+        this.y = 0;
         this.randomizePosition();
     }
     Food.prototype.randomizePosition = function () {
@@ -157,7 +166,7 @@ var Game = /** @class */ (function () {
             _this.food.draw(_this.ctx);
             _this.snake.draw(_this.ctx);
             _this.drawScore();
-        }, 1000 / FRAME_RATE); // Slower frame rate
+        }, 1000 / FRAME_RATE);
     };
     Game.prototype.clearCanvas = function () {
         this.ctx.clearRect(0, 0, CANVAS_SIZE, CANVAS_SIZE);
